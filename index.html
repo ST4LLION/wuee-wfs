@@ -243,25 +243,34 @@ footer span{color:var(--orange)}
 
   body { overflow-x: hidden !important; }
 
-  /* Header */
+  /* ── Header: โลโก้+ชื่อชิดบน, เวลาชิดขอบล่าง ── */
   header {
-    padding: 6px 10px !important;
+    padding: 0 !important;
     height: auto !important;
     min-height: unset !important;
+    align-items: stretch !important;
+    display: flex !important;
   }
-  .hdr-left { gap: 6px !important; min-width: 0 !important; flex: 1 !important; }
-  .hdr-logo,
-  header img[style*="border-radius:50%"] {
-    width: 40px !important;
-    height: 40px !important;
+  .hdr-left {
+    gap: 6px !important;
+    min-width: 0 !important;
+    flex: 1 !important;
+    padding: 4px 8px !important;
+    align-items: flex-start !important;
+  }
+  header img[style*="border-radius:50%"],
+  .hdr-logo {
+    width: 38px !important;
+    height: 38px !important;
     flex-shrink: 0 !important;
+    margin-top: 2px !important;
   }
   header .hdr-left > div {
     min-width: 0 !important;
     flex: 1 !important;
     overflow: hidden !important;
   }
-  /* ชื่อโปรเจค */
+  /* ชื่อโปรเจค — ชิดบน */
   header .hdr-left > div > div:first-child {
     font-size: 8.5px !important;
     letter-spacing: 0 !important;
@@ -273,22 +282,22 @@ footer span{color:var(--orange)}
     font-size: 7px !important;
     white-space: normal !important;
   }
-  .hdr-right { flex-shrink: 0 !important; }
+  /* เวลา+วัน — ชิดล่าง (ขอบแท็บส้ม) */
+  .hdr-right {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    padding: 0 8px 4px 0 !important;
+  }
   .hdr-clock { font-size: 18px !important; }
   .hdr-date  { font-size: 9px !important; }
 
-  /* Banner ส้ม — แสดงแบบ block แทน grid */
+  /* ── Banner ส้ม — ซ่อนข้อความ ── */
   div[style*="background:#F47920"] {
-    display: block !important;
-    padding: 4px 10px !important;
+    padding: 3px 10px !important;
   }
   div[style*="background:#F47920"] span {
-    display: block !important;
-    font-size: 9px !important;
-    white-space: normal !important;
-    word-break: break-word !important;
-    text-overflow: unset !important;
-    overflow: visible !important;
+    display: none !important;
   }
 
   /* Page */
@@ -298,7 +307,7 @@ footer span{color:var(--orange)}
   .sum-btns { display: flex !important; flex-wrap: nowrap !important; gap: 3px !important; }
   .sum-btn  { font-size: 9px !important; padding: 3px 7px !important; white-space: nowrap !important; }
 
-  /* Stat cards — scroll horizontal */
+  /* Stat cards */
   div[style*="display:flex"][style*="gap:10px"] {
     overflow-x: auto !important;
     flex-wrap: nowrap !important;
